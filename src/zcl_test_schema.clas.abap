@@ -4,7 +4,7 @@ CLASS zcl_test_schema DEFINITION
   CREATE PUBLIC .
 
   PUBLIC SECTION.
-    TYPES: BEGIN OF ty_bar,
+    TYPES: BEGIN OF ty_bar ##NEEDED,
              foo TYPE i,
              moo TYPE string,
            END OF ty_bar.

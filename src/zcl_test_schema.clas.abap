@@ -18,7 +18,7 @@ ENDCLASS.
 
 
 
-CLASS ZCL_TEST_SCHEMA IMPLEMENTATION.
+CLASS zcl_test_schema IMPLEMENTATION.
 
 
   METHOD run.
@@ -37,6 +37,8 @@ CLASS ZCL_TEST_SCHEMA IMPLEMENTATION.
         LOOP AT lt_components INTO ls_component.
           rv_schema = rv_schema && ls_component-name.
         ENDLOOP.
+      WHEN OTHERS.
+        ASSERT 1 = 2.
     ENDCASE.
 
   ENDMETHOD.

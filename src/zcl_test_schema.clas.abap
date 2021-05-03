@@ -33,7 +33,8 @@ CLASS ZCL_TEST_SCHEMA IMPLEMENTATION.
     CASE lo_type->type_kind.
       WHEN cl_abap_typedescr=>typekind_struct2.
         lo_structure ?= lo_type.
-        LOOP AT lo_structure->get_components( ) INTO ls_component.
+        lt_components = lo_structure->get_components( ).
+        LOOP AT lt_components INTO ls_component.
           rv_schema = rv_schema && ls_component-name.
         ENDLOOP.
     ENDCASE.

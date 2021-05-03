@@ -25,7 +25,8 @@ CLASS ZCL_TEST_SCHEMA IMPLEMENTATION.
 
     DATA lo_type TYPE REF TO cl_abap_typedescr.
     DATA lo_structure TYPE REF TO cl_abap_structdescr.
-    DATA ls_component TYPE LINE OF cl_abap_structdescr=>component_table.
+    DATA lt_components TYPE cl_abap_structdescr=>component_table.
+    DATA ls_component LIKE LINE OF lt_components.
 
     lo_type = cl_abap_typedescr=>describe_by_name( 'ZCL_TEST_SCHEMA=>BAR' ).
 

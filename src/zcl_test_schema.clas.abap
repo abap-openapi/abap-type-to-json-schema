@@ -4,10 +4,10 @@ CLASS zcl_test_schema DEFINITION
   CREATE PUBLIC .
 
   PUBLIC SECTION.
-    TYPES: BEGIN OF bar,
+    TYPES: BEGIN OF ty_bar,
              foo TYPE i,
              moo TYPE string,
-           END OF bar.
+           END OF ty_bar.
 
     METHODS run
       RETURNING
@@ -28,7 +28,7 @@ CLASS zcl_test_schema IMPLEMENTATION.
     DATA lt_components TYPE cl_abap_structdescr=>component_table.
     DATA ls_component LIKE LINE OF lt_components.
 
-    lo_type = cl_abap_typedescr=>describe_by_name( 'ZCL_TEST_SCHEMA=>BAR' ).
+    lo_type = cl_abap_typedescr=>describe_by_name( 'ZCL_TEST_SCHEMA=>TY_BAR' ).
 
     CASE lo_type->type_kind.
       WHEN cl_abap_typedescr=>typekind_struct2.

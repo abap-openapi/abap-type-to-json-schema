@@ -23,7 +23,7 @@ CLASS ltcl_test IMPLEMENTATION.
 
     cl_abap_unit_assert=>assert_equals(
       act = lv_schema
-      exp = 'FOOMOO' ).
+      exp = 'FOOnumberMOOstring' ).
   ENDMETHOD.
 
 ENDCLASS.

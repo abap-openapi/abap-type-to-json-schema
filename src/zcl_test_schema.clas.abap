@@ -86,7 +86,7 @@ CLASS ZCL_TEST_SCHEMA IMPLEMENTATION.
       WHEN cl_abap_typedescr=>typekind_time.
         result = 'string'.
       WHEN OTHERS.
-        ASSERT 1 = 'todo'. " or unsupported
+        ASSERT 1 = 'todo_or_unsupported'.
     ENDCASE.
 
   ENDMETHOD.
@@ -109,7 +109,11 @@ CLASS ZCL_TEST_SCHEMA IMPLEMENTATION.
 
   METHOD traverse_table.
 
-* todo
+    DATA table TYPE REF TO cl_abap_tabledescr.
+
+    table ?= type.
+
+    result = 'table' && traverse( table->get_table_line_type( ) ).
 
   ENDMETHOD.
 ENDCLASS.

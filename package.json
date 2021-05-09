@@ -1,0 +1,26 @@
+{
+  "name": "abap-type-to-json-schema",
+  "private": true,
+  "version": "1.0.0",
+  "description": "testing",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abap-openapi/abap-type-to-json-schema.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "scripts": {
+    "lint": "abaplint",
+    "unit": "rm -rf output && abap_transpile && echo RUNNING && node output/index.mjs",
+    "test": "npm run lint && npm run unit"
+  },
+  "bugs": {
+    "url": "https://github.com/abap-openapi/abap-type-to-json-schema/issues"
+  },
+  "homepage": "https://github.com/abap-openapi/abap-type-to-json-schema#readme",
+  "dependencies": {
+    "@abaplint/cli": "^2.74.14",
+    "@abaplint/runtime": "^1.3.8",
+    "@abaplint/transpiler-cli": "^1.3.8"
+  }
+}
